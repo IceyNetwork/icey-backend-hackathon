@@ -1,0 +1,6 @@
+.vercel
+coverage
+node_modules
+package-lock.json
+.env
+lib
