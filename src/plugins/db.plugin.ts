@@ -13,9 +13,7 @@ export const connectDb = fastifyPlugin(async (app: FastifyInstance) => {
     db
       .collection(Collections.Users)
       .createIndex({ address: 1 }, { unique: true }),
-    db
-      .collection(Collections.Threads)
-      .createIndex({ participants: 1 }, { unique: true }),
+    db.collection(Collections.Threads).createIndex({ participants: 1 }),
     db
       .collection(Collections.Messages)
       .createIndex({ threadId: 1, createdAt: -1 }),

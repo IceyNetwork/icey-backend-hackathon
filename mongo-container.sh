@@ -20,14 +20,14 @@ init_replica_set() {
 # Main script
 case "$1" in
     start)
-        echo "Starting MongoDB and creating collections..."
+        echo "Starting MongoDB..."
         docker compose up -d mongo
         wait_for_mongodb
         init_replica_set
         echo "MongoDB is up!"
         ;;
     restart)
-        echo "Restarting MongoDB and clearing collections..."
+        echo "Restarting MongoDB..."
         docker compose restart mongo
         wait_for_mongodb
         init_replica_set
